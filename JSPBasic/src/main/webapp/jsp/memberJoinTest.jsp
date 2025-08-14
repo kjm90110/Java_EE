@@ -7,7 +7,7 @@
 
 <jsp:useBean id="member" class="model.Member" scope="request" />
 
-<jsp:setProperty name="member" property="*" />/
+<jsp:setProperty name="member" property="*" />
 <!-- bean 속성 이름과 세팅된 속성 이름이 다를 경우 param 추가 -->
 <jsp:setProperty name="member" property="memail" param="mem_email" />
 <%--<jsp:setProperty name="member" property="mpass" />

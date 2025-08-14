@@ -1,0 +1,28 @@
+package myServlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class LogoutProcServlet extends HttpServlet {
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+
+		HttpSession session = req.getSession();
+		
+		if(session!=null) {
+			// session 무효화
+			session.invalidate();
+		}
+		
+		resp.sendRedirect("/jsp/loginForm2.jsp");
+		
+	}
+	
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  
+  <display-name>JSPBasic</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- application init parameter (= servlet context init parameter) -->
+  <context-param>
+  	<param-name>aip</param-name>
+	<param-value>어플리케이션초기화파라미터값</param-value>
+  </context-param>
+  
+  <servlet>
+  	<servlet-name>InitParamTestServlet</servlet-name>
+  	<servlet-class>myServlet.InitParamTestServlet</servlet-class>
+  	<!-- servlet init parameter -->
+  	<init-param>
+  		<param-name>sip</param-name>
+  		<param-value>서블릿초기화파라미터값</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>InitParamTestServlet</servlet-name>
+  	<url-pattern>/InitParamTestServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>LoginProcServlet</servlet-name>
+  	<servlet-class>myServlet.LoginProcServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+ 	<servlet-name>LoginProcServlet</servlet-name>
+ 	<url-pattern>/loginProc</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  	<servlet-name>LogoutProcServlet</servlet-name>
+  	<servlet-class>myServlet.LogoutProcServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+ 	<servlet-name>LogoutProcServlet</servlet-name>
+ 	<url-pattern>/logoutProc</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  	<servlet-name>MyLoginProc</servlet-name>
+  	<servlet-class>myServlet.MyLoginProc</servlet-class>
+  </servlet>
+ <servlet-mapping>
+ 	<servlet-name>MyLoginProc</servlet-name>
+ 	<url-pattern>/MyLoginProc</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  	<servlet-name>MyLogoutProc</servlet-name>
+  	<servlet-class>myServlet.MyLogoutProc</servlet-class>
+  </servlet>
+ <servlet-mapping>
+ 	<servlet-name>MyLogoutProc</servlet-name>
+ 	<url-pattern>/MyLogoutProc</url-pattern>
+ </servlet-mapping>
+ 
+ <error-page>
+	<exception-type>java.lang.ArrayIndexOutOfBoundsException</exception-type>
+	<location>/jsp/errorPages/array.jsp</location>
+ </error-page>
+  <error-page>
+	<exception-type>java.lang.ClassCastException</exception-type>
+	<location>/jsp/errorPages/class.jsp</location>
+ </error-page> 
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/jsp/errorPages/404.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/jsp/errorPages/500.jsp</location>
+  </error-page>
+  
+</web-app>
